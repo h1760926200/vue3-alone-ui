@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from '@/router/index'
 
 import _public from './until/public'
+import packages from '../packages/index'
 import { 
     ElSelect,
     ElOption,
@@ -14,7 +15,12 @@ import {
     ElMenu,
     ElMenuItem,
     ElTable,
-    ElTableColumn
+    ElTableColumn,
+    ElCalendar,
+    ElContainer,
+    ElAside,
+    ElMain,
+    ElTreeSelect
 } from 'element-plus';
 import 'element-plus/dist/index.css'
 createApp(App)
@@ -29,6 +35,12 @@ createApp(App)
 .use(ElSubMenu)
 .use(ElTable)
 .use(ElTableColumn)
+.use(ElCalendar)
+.use(ElContainer)
+.use(ElAside)
+.use(ElMain)
+.use(ElTreeSelect)
 .use(_public)
 .use(router) 
+.use(packages) 
 .mount('#app')

@@ -7,7 +7,7 @@
 <script>
 import { reactive,toRefs,computed } from 'vue'
 export default {
-    name: 'HelloVue3MyCol',
+    name: 'MyCol',
     props: { 
         span: { 
             type: Number,

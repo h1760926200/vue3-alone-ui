@@ -2,36 +2,40 @@
     <el-table
         :data="data"
         border
+        stripe
         ref="dragTable"
         style="width: 100%">
         <el-table-column
-            prop="id"
-            label="id">
-        </el-table-column>
-        <el-table-column
-            prop="name"
-            label="name">
-        </el-table-column>
-        <el-table-column
-            prop="age"
-            label="age">
-        </el-table-column>
-        <el-table-column
-            prop="hobby"
-            label="hobby">
+            show-overflow-tooltip 
+            v-for="(item, index) in col"
+            :key="index"
+            :prop="col[index].prop"
+            :label="item.label"
+        >
         </el-table-column>
     </el-table>
 </template>
 
 <script>
+import { reactive, toRefs } from 'vue'
 export default {
-    name: 'HelloVue3MyTable',
+    name: 'MyTable',
     props: { 
         data: { 
             type: Array,
             default: [],
             required: true
+        },
+        col: { 
+            type: Array,
+            default: [],
+            required: true
         }
+    },
+    setup() { 
+        const state = reactive({ 
+
+        })
     }
 };
 </script>

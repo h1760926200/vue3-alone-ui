@@ -11,7 +11,7 @@
 <script>
 import { reactive, toRefs,computed } from 'vue'
 export default {
-    name: 'HelloVue3MyLink',
+    name: 'MyLink',
     props: { 
         type: { 
             type: String,

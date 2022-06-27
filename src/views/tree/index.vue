@@ -1,22 +1,25 @@
 <template>
     <div>
-        <h1>Tree递归树</h1>
+        <h1>二次封装Element-ui selectTree下拉多选树形</h1>
+        <!-- <my-tree
+            :data="driverData"></my-tree> -->
+        <select-tree
+            v-model="value" 
+            :data="driverData"
+            ></select-tree>
     </div>
 </template>
 
 <script>
 import { reactive,toRefs,ref,defineComponent,getCurrentInstance } from 'vue'
-import myTree from '@/components/my-tree'
 export default defineComponent({
-    components: {
-        myTree
-    },
     setup() { 
         const { proxy } = getCurrentInstance();
 
         // const childFormRef: any = ref<InstanceType<typeof Child>>()
         const state = reactive({ 
             query: '',
+            treeList: [],
             driverData: [
                 {
                     id: 1,
@@ -67,7 +70,7 @@ export default defineComponent({
                     ],
                 },
             ],
-            treeList: []
+            value: ''
         })
 
         const handleCheck = (refName) => { 

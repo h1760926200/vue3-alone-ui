@@ -28,7 +28,7 @@ import { reactive,toRefs,computed,onMounted } from 'vue'
 // 拼音作为键
 const dataType = {}
 export default {
-    name: 'HelloVue3MySelect',
+    name: 'MySelect',
     props: { 
         type: { 
             type: String,

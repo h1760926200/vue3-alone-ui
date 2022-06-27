@@ -11,6 +11,7 @@
 <script>
     import { reactive, onMounted, toRefs,computed } from 'vue'
     export default {
+        name: 'MyButton',
         props: { 
             type: { 
                 type: String,

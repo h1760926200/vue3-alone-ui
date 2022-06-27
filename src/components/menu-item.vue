@@ -6,7 +6,7 @@
 
 <script>
 export default {
-    name: 'HelloVue3MenuItem',
+    name: 'MenuItem',
     props: {
         path: { 
             type: String,

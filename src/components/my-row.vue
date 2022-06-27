@@ -7,7 +7,7 @@
 <script>
 import myCol from '@/components/my-col'
 export default {
-    name: 'HelloVue3Main',
+    name: 'MyRow',
     components: { 
         myCol
     }

@@ -22,6 +22,7 @@
     import menuItem from '@/components/menu-item'
     import { ref, reactive, toRefs, onMounted, provide } from 'vue';
     export default {
+        name: 'MyMenu',
         components: { 
             subMenu,
             menuItem

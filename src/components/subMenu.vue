@@ -37,7 +37,7 @@
 import { computed, reactive,toRefs,inject } from 'vue'
 import menuItem from '@/components/menu-item'
 export default {
-    name: 'HelloVue3MyMenu',
+    name: 'MyMenu',
     components: { 
         menuItem
     },

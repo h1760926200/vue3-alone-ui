@@ -21,6 +21,7 @@
 import { reactive,toRefs,ref,onMounted, watch, defineComponent,getCurrentInstance } from 'vue'
 import debounce from 'lodash/debounce'
 export default defineComponent({
+    name: 'MyTree',
     inheritAttrs: false,
     props: {
         filterLabel: { 

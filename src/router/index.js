@@ -47,6 +47,10 @@ const routes = [
                 path: '/drag_table',
                 component: () => import('@/views/dragTable/index.vue'),
             },
+            { 
+                path: '/test_select',
+                component: () => import('@/views/test/index.vue'),
+            },
         ]
     }
 ]
