@@ -24,5 +24,11 @@ export default {
 .home{ 
     font-size: 50px;
     font-weight: 800;
+    margin-top: 180px;
+}
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 </style>

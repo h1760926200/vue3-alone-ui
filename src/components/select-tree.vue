@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { reactive, toRefs } from 'vue-demi';
+import { getCurrentInstance, reactive, toRefs } from 'vue-demi';
 export default {
     name: 'SelectTree',
     props: { 
@@ -26,11 +26,16 @@ export default {
         }
     },
     setup() { 
+        const { proxy } = getCurrentInstance();
         const state = reactive({ 
             myPlaceholder: ''
         })
-
+// getHalfCheckedKeys
         const getValue = (a,b,c) => { 
+            console.log(a);
+            console.log(b);
+        }
+        const getHalfCheckedKeys = (a,b,c) => { 
             console.log(a);
             console.log(b);
         }

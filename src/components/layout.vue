@@ -48,7 +48,7 @@ export default {
 .narbar{ 
     // height: calc(100% - 88px);
     position: fixed;
-    top: 80px;
+    top: 100px;
     left: 50px;
     height: 800px;
     width: 220px;
@@ -83,7 +83,7 @@ export default {
     max-height: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
-    padding-top: 55px;
+    padding-top: 80px;
     // z-index: -1;
     // left: 250px;
 }

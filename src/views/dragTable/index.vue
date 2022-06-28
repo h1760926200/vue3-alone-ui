@@ -1,14 +1,13 @@
 <template>
     <div>
         <h1>可拖拽的Table表格</h1>
-        <my-table :data="tableData" :col="tableCol">
+        <my-table :data="tableData" :col="tableCol" drag @mouseEnd="clickCell">
         </my-table>
     </div>
 </template>
 
 <script>
 import { onMounted, reactive,toRefs } from 'vue'
-import Sortable from 'sortablejs'
 export default {
     name: 'HelloVue3Index',
     setup() { 
@@ -35,13 +34,14 @@ export default {
                 id: 3,
                 name: 'ii',
                 age: 13,
-                hobby: '哦哦'
+                hobby: '哦哦',
             },
         ]
         const tableCol = [
             {
                 label: "id",
-                prop: "id"
+                prop: "id",
+                sortable: true
             },
             {
                 label: "姓名",
@@ -62,12 +62,17 @@ export default {
         })
 
         onMounted(() => { 
-            const tbody = document.querySelector(".el-table__body-wrapper tbody");
-            Sortable.create(tbody);
+
         })
+        const clickCell = (e) =>{ 
+            console.log('我拖拽结束了');
+            console.log(e.oldIndex);
+            console.log(e.newIndex);
+        }
 
         return { 
-            ...toRefs(state)
+            ...toRefs(state),
+            clickCell
         }
     }
 };
