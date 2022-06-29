@@ -25,7 +25,7 @@
                     封装select template部分
                 </div>
                 <div class="html" style="margin-top:10px">
-                    &lt el-select <br>
+                    &ltel-select <br>
                         &nbsp; filterable<br>
                         &nbsp; clearable<br>
                         &nbsp; :placeholder="placeholder || myPlaceholder"<br>
@@ -34,18 +34,18 @@
                         &nbsp; v-bind="$attrs"<br>
                         &nbsp; @input="val => $emit('input', val)"<br>
                     ><br>
-                        &lt slot> &lt /slot><br>
-                        &nbsp; &lt el-option<br>
+                        &ltslot> &lt/slot><br>
+                        &nbsp; &ltel-option<br>
                             &nbsp; v-for="item in options"<br>
                             &nbsp; :key="item[type === 'enum' ? 'v' : kv.split(':')[1]]"<br>
                             &nbsp; :label="getLabel(item)"<br>
                             &nbsp; :value="getValue(item)"<br>
                         ><br>
-                            &lt template v-if="renderFormat"><br>
-                                &nbsp; &lt span v-html="renderFormat(item)">&lt /span><br>
-                            &lt /template><br>
-                        &nbsp; &lt /el-option><br>
-                    &lt /el-select>
+                            &lttemplate v-if="renderFormat"><br>
+                                &nbsp; &ltspan v-html="renderFormat(item)">&lt/span><br>
+                            &lt/template><br>
+                        &nbsp; &lt/el-option><br>
+                    &lt/el-select>
                 </div>
             </div>
             <div class="trotion">

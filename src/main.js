@@ -20,7 +20,8 @@ import {
     ElContainer,
     ElAside,
     ElMain,
-    ElTreeSelect
+    ElTreeSelect,
+    ElCheckbox
 } from 'element-plus';
 import 'element-plus/dist/index.css'
 createApp(App)
@@ -40,6 +41,7 @@ createApp(App)
 .use(ElAside)
 .use(ElMain)
 .use(ElTreeSelect)
+.use(ElCheckbox)
 .use(_public)
 .use(router) 
 .use(packages) 

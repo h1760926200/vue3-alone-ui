@@ -1,7 +1,7 @@
 {
   "name": "vue3-alone-ui",
   "main": "dist/vue3-alone-ui.umd.min.js",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "private":false,
   "author": {
     "name": "还在完善的个人组件库"
