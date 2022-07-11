@@ -19,7 +19,7 @@ export default {
         Vue.component('my-select', MySelect),
         Vue.component('my-menu', myMenu),
         // Vue.component('my-form', myFrom),
-        Vue.component('test-select', EnumSelect),
+        Vue.component('enum-select', EnumSelect),
         Vue.component('my-table', myTable),
         Vue.component('select-tree', SelectTree)
         // Vue.component('my-tree', MyTree)

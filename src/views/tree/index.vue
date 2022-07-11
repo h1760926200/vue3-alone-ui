@@ -75,6 +75,97 @@ export default defineComponent({
                 select: '—'
             },
             {
+                name: 'data',
+                remark: '展示数据',
+                type: 'array',
+                canSelect: '—',
+                select: '—'
+            },
+            {
+                name: 'empty-text',
+                remark: '内容为空的时候展示的文本',
+                type: 'string',
+                canSelect: '—',
+                select: '—'
+            },
+            {
+                name: 'node-key',
+                remark: '每个树节点用来作为唯一标识的属性，整棵树应该是唯一的',
+                type: 'object',
+                canSelect: '—',
+                select: '—'
+            },
+            {
+                name: 'props',
+                remark: '',
+                type: 'array',
+                canSelect: '—',
+                select: '—'
+            },
+            {
+                name: 'load',
+                remark: '加载子树数据的方法，仅当 lazy 属性为true 时生效',
+                type: 'function(node, resolve)，node为当前点击的节点，resolve为数据加载完成的回调(必须调用)',
+                canSelect: '—',
+                select: '—'
+            },
+            {
+                name: 'default-expand-all',
+                remark: '是否默认展开所有节点',
+                type: 'boolean',
+                canSelect: '—',
+                select: 'false'
+            },
+            {
+                name: 'highlight-current',
+                remark: '是否高亮当前选中节点，默认值是 false。',
+                type: 'boolean',
+                canSelect: '—',
+                select: 'false'
+            },
+            {
+                name: 'expand-on-click-node',
+                remark: '是否在点击节点的时候展开或者收缩节点， 默认值为 true，如果为 false，则只有点箭头图标的时候才会展开或者收缩节点。',
+                type: 'boolean',
+                canSelect: '—',
+                select: 'true'
+            },
+            {
+                name: 'auto-expand-parent',
+                remark: '展开子节点的时候是否自动展开父节点',
+                type: 'boolean',
+                canSelect: '—',
+                select: 'true'
+            },
+            {
+                name: 'default-expanded-keys',
+                remark: '默认展开的节点的 key 的数组',
+                type: 'array',
+                canSelect: '—',
+                select: '—'
+            },
+            {
+                name: 'accordion',
+                remark: '是否每次只打开一个同级树节点展开',
+                type: 'boolean',
+                canSelect: '—',
+                select: 'false'
+            },
+            {
+                name: 'icon',
+                remark: '自定义图标组件',
+                type: 'string / Component',
+                canSelect: '—',
+                select: '—'
+            },
+            {
+                name: 'lazy',
+                remark: '是否懒加载子节点，需与 load 方法结合使用',
+                type: 'boolean',
+                canSelect: '—',
+                select: 'false'
+            },
+            {
                 name: 'disabled',
                 remark: '是否禁用',
                 type: 'boolean',
