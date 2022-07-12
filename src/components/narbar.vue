@@ -31,7 +31,7 @@ export default {
                 // },
                 { 
                     path: '/open_tree',
-                    name: '递归展开树'
+                    name: '递归展开树Menu'
                 },
                 // { 
                 //     path: '/drag_form',
@@ -41,18 +41,18 @@ export default {
                     path: '/drag_table',
                     name: '可拖拽Table表格'
                 },
-                // { 
-                //     path: '/select',
-                //     name: 'Select选择框'
-                // },
+                { 
+                    path: '/filter_table',
+                    name: 'Table过滤列'
+                },
                 { 
                     path: '/test_select',
                     name: '枚举值Select下拉选择框'
                 },
-                // { 
-                //     path: '/input',
-                //     name: 'Input输入框'
-                // },
+                { 
+                    path: '/test_vue2table',
+                    name: '测试vue2table'
+                },
                 { 
                     path: '/dialog',
                     name: 'Dialog可拖拽对话框'

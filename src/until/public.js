@@ -9,6 +9,8 @@ import myMenu from '@/components/my-menu'
 // import myFrom from '@/components/my-form'
 import myTable from '@/components/my-table'
 import SelectTree from '@/components/select-tree'
+import MyFilterTable from '@/components/filter-table'
+import MyFilterColumn from '@/components/my-filter-column'
 
 export default {
     install (Vue) {
@@ -18,10 +20,10 @@ export default {
         Vue.component('my-link', MyLink),
         Vue.component('my-select', MySelect),
         Vue.component('my-menu', myMenu),
-        // Vue.component('my-form', myFrom),
+        Vue.component('my-filter-column', MyFilterColumn),
         Vue.component('enum-select', EnumSelect),
         Vue.component('my-table', myTable),
-        Vue.component('select-tree', SelectTree)
-        // Vue.component('my-tree', MyTree)
+        Vue.component('select-tree', SelectTree),
+        Vue.component('my-filter-table', MyFilterTable)
     }
 }

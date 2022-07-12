@@ -51,6 +51,14 @@ const routes = [
                 path: '/test_select',
                 component: () => import('@/views/test/index.vue'),
             },
+            { 
+                path: '/filter_table',
+                component: () => import('@/views/filter-table/index.vue'),
+            },
+            { 
+                path: '/test_vue2table',
+                component: () => import('@/views/vue2table/index.vue'),
+            },
         ]
     }
 ]

@@ -1,6 +1,6 @@
 <template>
     <div class="menu">
-        <template v-for="item in routes">
+        <template v-for="item in data">
           <sub-menu
             v-if="item.children && item.children.length > 1"
             :item="item"
@@ -22,6 +22,11 @@
     import menuItem from '@/components/menu-item'
     import { ref, reactive, toRefs, onMounted, provide } from 'vue';
     export default {
+        props: { 
+            data: {
+                type: Array,
+            }
+        },
         name: 'MyMenu',
         components: { 
             subMenu,
@@ -30,69 +35,6 @@
         setup(props, context) {
             const featureState = reactive({ 
                 value: '123',
-                routes: 
-                    [
-                        {
-                            path: '/',
-                            meta: {
-                            title: '八大菜系介绍'
-                            }
-                        },
-                        {
-                            path: '/luCai',
-                            meta: {
-                            title: '鲁菜'
-                            },
-                            children: [
-                            {
-                                path: 'history',
-                                meta: {
-                                title: '发展历史'
-                                },
-                                children: [
-                                {
-                                    path: 'qinAndHan',
-                                    meta: {
-                                    title: '秦汉时期'
-                                    }
-                                },
-                                {
-                                    path: 'northernWei',
-                                    meta: {
-                                    title: '北魏时期'
-                                    }
-                                }
-                                ]
-                            },
-                            {
-                                path: 'features',
-                                meta: {
-                                title: '风味特色'
-                                }
-                            }
-                            ]
-                        },
-                        {
-                            path: '/chuanCai',
-                            meta: {
-                            title: '川菜'
-                            },
-                            children: [
-                            {
-                                path: 'introduction',
-                                meta: {
-                                title: '川菜概论'
-                                }
-                            },
-                            {
-                                path: 'history',
-                                meta: {
-                                title: '发展历史'
-                                }
-                            }
-                            ]
-                        },
-                ],
                 openedSubMenus: [],
 
             });

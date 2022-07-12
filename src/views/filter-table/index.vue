@@ -1,13 +1,16 @@
 <template>
     <div>
-        <h1>可拖拽的Table表格</h1>
-        <my-table :data="tableData" :col="tableCol" drag @onEnd="clickCell">
-        </my-table>
+        <h1>二次封装element-ui table</h1>
+        <my-filter-table
+            :data="tableData"
+            filterName="过滤"
+            :col="tableColunm">
+        </my-filter-table>
     </div>
 </template>
 
 <script>
-import { onMounted, reactive,toRefs } from 'vue'
+import { reactive, toRefs } from 'vue-demi';
 export default {
     name: 'HelloVue3Index',
     setup() { 
@@ -37,41 +40,36 @@ export default {
                 hobby: '哦哦',
             },
         ]
-        const tableCol = [
+        const tableColunm = [
             {
                 label: "id",
                 prop: "id",
+                show: true
             },
             {
                 label: "姓名",
-                prop: "name"
+                prop: "name",
+                show: true
             },
             {
                 label: "年龄",
-                prop: "age"
+                prop: "age",
+                show: true
             },
             {
                 label: "爱好",
-                prop: "hobby"
+                prop: "hobby",
+                show: true
             },
         ]
-        const state = reactive({ 
+
+        const state = reactive({
             tableData,
-            tableCol
+            tableColunm
         })
-
-        onMounted(() => { 
-
-        })
-        const clickCell = (e) =>{ 
-            console.log('我拖拽结束了');
-            console.log(e.oldIndex);
-            console.log(e.newIndex);
-        }
 
         return { 
             ...toRefs(state),
-            clickCell
         }
     }
 };

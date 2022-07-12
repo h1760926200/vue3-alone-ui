@@ -21,7 +21,10 @@ import {
     ElAside,
     ElMain,
     ElTreeSelect,
-    ElCheckbox
+    ElCheckbox,
+    ElDropdown,
+    ElDropdownMenu,
+    ElIcon,
 } from 'element-plus';
 import 'element-plus/dist/index.css'
 createApp(App)
@@ -42,6 +45,9 @@ createApp(App)
 .use(ElMain)
 .use(ElTreeSelect)
 .use(ElCheckbox)
+.use(ElIcon)
+.use(ElDropdown)
+.use(ElDropdownMenu)
 .use(_public)
 .use(router) 
 .use(packages) 
