@@ -1,15 +1,19 @@
 <template>
-    <div class="menu">
+    <div class="menu" :style="`background-color:${backgroundColor};color:${textColor};`">
         <template v-for="item in data">
           <sub-menu
             v-if="item.children && item.children.length > 1"
             :item="item"
             :base-path="item.path"
+            :background-color="backgroundColor"
+            :text-color="textColor"
             :key="item.path"
           />
           <menu-item
             v-else
             :path="item.path"
+            :background-color="backgroundColor"
+            :text-color="textColor"
             :title="item.meta.title"
             :key="item.path"
             />
@@ -25,6 +29,14 @@
         props: { 
             data: {
                 type: Array,
+            },
+            textColor: {
+                type: String,
+                default: '#303133'
+            },
+            backgroundColor: {
+                type: String,
+                default: '#ffffff'
             }
         },
         name: 'MyMenu',
@@ -69,8 +81,6 @@
     user-select: none;
     width: 200px;
     height: 100%;
-    background: white;
     overflow-x: hidden;
-    box-shadow: 15px 0 35px rgba(35, 0, 232, 0.1);
 }
 </style>

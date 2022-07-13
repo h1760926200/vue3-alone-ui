@@ -2,7 +2,7 @@
     <div>
         <h1>封装递归展开树</h1>
         <div style="margin-bottom:20px">
-            <my-menu :data="list"></my-menu>
+            <my-menu :data="list" background-color="" text-color=""></my-menu>
         </div>
         <div class="footer">
             <!-- <div class="trotion">
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div style="margin-top:150px">
-            <h1>enum select属性</h1>
+            <h1>tree menu属性</h1>
             <el-table
                 :data="data"
                 border
@@ -62,31 +62,31 @@ export default {
         const list =  
             [
                 {
-                    path: '/',
+                    path: '/open_tree',
                     meta: {
                     title: '八大菜系介绍'
                     }
                 },
                 {
-                    path: '/luCai',
+                    path: '/open_tree',
                     meta: {
                     title: '鲁菜'
                     },
                     children: [
                     {
-                        path: 'history',
+                        path: 'open_tree',
                         meta: {
                         title: '发展历史'
                         },
                         children: [
                         {
-                            path: 'qinAndHan',
+                            path: 'open_tree',
                             meta: {
                             title: '秦汉时期'
                             }
                         },
                         {
-                            path: 'northernWei',
+                            path: 'open_tree',
                             meta: {
                             title: '北魏时期'
                             }
@@ -94,7 +94,7 @@ export default {
                         ]
                     },
                     {
-                        path: 'features',
+                        path: 'open_tree',
                         meta: {
                         title: '风味特色'
                         }
@@ -102,19 +102,19 @@ export default {
                     ]
                 },
                 {
-                    path: '/chuanCai',
+                    path: '/open_tree',
                     meta: {
                     title: '川菜'
                     },
                     children: [
                     {
-                        path: 'introduction',
+                        path: 'open_tree',
                         meta: {
                         title: '川菜概论'
                         }
                     },
                     {
-                        path: 'history',
+                        path: 'open_tree',
                         meta: {
                         title: '发展历史'
                         }
@@ -123,7 +123,27 @@ export default {
                 },
         ]
         const data = [
-
+            {
+                name: 'data',
+                remark: '选中项绑定值',
+                type: 'array',
+                canSelect: '—',
+                select: '—',
+            },
+            {
+                name: 'background-color',
+                remark: '菜单的背景颜色',
+                type: 'string',
+                canSelect: '—',
+                select: '#ffffff',
+            },
+            {
+                name: 'text-color',
+                remark: '菜单的文字颜色',
+                type: 'string',
+                canSelect: '—',
+                select: '#303133',
+            },
         ]
         const state = reactive({
             list,
