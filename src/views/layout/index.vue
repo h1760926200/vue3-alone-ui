@@ -72,13 +72,62 @@
                 </div>
             </div>
         </div>
+        <div style="margin-top:50px;margin-bottom:100px">
+            <h1>Col 属性</h1>
+            <el-table
+                :data="data"
+                border
+                stripe
+                size="large"
+                style="width: 100%">
+                <el-table-column
+                    prop="name"
+                    label="属性">
+                </el-table-column>
+                <el-table-column
+                    prop="remark"
+                    label="说明">
+                </el-table-column>
+                <el-table-column
+                    prop="type"
+                    label="类型">
+                </el-table-column>
+                <el-table-column
+                    prop="canSelect"
+                    label="可选值">
+                </el-table-column>
+                <el-table-column
+                    prop="select"
+                    label="默认值">
+                </el-table-column>
+            </el-table>
+        </div>
     </div>
 </template>
 
 <script>
+import { reactive, toRefs } from 'vue-demi';
 export default {
     name: 'HelloVue3Index',
+    setup() {
+        const data = [
+            {
+                name: 'span',
+                remark: '栅格占据的列数	',
+                type: 'number',
+                canSelect: '—',
+                select: '24',
+            },
+        ]
 
+        const state = reactive({
+            data
+        })
+        return { 
+            ...toRefs(state)
+        }
+
+    }
 };
 </script>
 

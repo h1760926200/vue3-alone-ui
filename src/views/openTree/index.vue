@@ -21,7 +21,7 @@
                 <div v-text="`}`" class="html"></div>
             </div>
         </div>
-        <div style="margin-top:150px">
+        <div style="margin-top:50px;margin-bottom:100px">
             <h1>tree menu属性</h1>
             <el-table
                 :data="data"
@@ -125,7 +125,7 @@ export default {
         const data = [
             {
                 name: 'data',
-                remark: '选中项绑定值',
+                remark: '显示的数据',
                 type: 'array',
                 canSelect: '—',
                 select: '—',

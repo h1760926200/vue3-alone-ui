@@ -6,15 +6,33 @@
         row-key="id"
         @sortChange="clickCell"
         style="width: 100%">
-        <el-table-column
-            show-overflow-tooltip 
-            v-for="(item, index) in col"
-            :key="index"
-            :class="'table-colunm'+ index"
-            :prop="col[index].prop"
-            :label="item.label"
-        >
-        </el-table-column>
+        <template v-if="drag">
+            <slot name="tableColumn"></slot>
+            <el-table-column
+                show-overflow-tooltip 
+                v-for="(item, index) in col"
+                :key="index"
+                :class="'table-colunm'+ index"
+                :prop="col[index].prop"
+                :label="item.label"
+            >
+            <template #[item.prop]="{ row }">
+                <slot :name="row.prop" :col="row">{{row}}</slot>
+            </template>
+            </el-table-column>
+        </template>
+        <template v-else>
+            <slot name="tableColumn"></slot>
+            <el-table-column
+                show-overflow-tooltip 
+                v-for="(item, index) in col"
+                :key="index"
+                :class="'table-colunm'+ index"
+                :prop="item.prop"
+                :label="item.label"
+            >
+            </el-table-column>
+        </template>
     </el-table>
 </template>
 
@@ -32,12 +50,10 @@ export default {
         col: { 
             type: Array,
             default: [],
-            required: true
         },
         drag: { 
             type: Boolean,
             default: false,
-            required: false
         },
         sortChange: Function,
     },

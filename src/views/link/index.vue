@@ -42,12 +42,75 @@
                 <div v-text="'</my-row>'" class="html"></div>
             </div>
         </div>
+        <div style="margin-top:50px;;margin-bottom:100px">
+            <h1>Link 属性</h1>
+            <el-table
+                :data="data"
+                border
+                stripe
+                size="large"
+                style="width: 100%">
+                <el-table-column
+                    prop="name"
+                    label="属性">
+                </el-table-column>
+                <el-table-column
+                    prop="remark"
+                    label="说明">
+                </el-table-column>
+                <el-table-column
+                    prop="type"
+                    label="类型">
+                </el-table-column>
+                <el-table-column
+                    prop="canSelect"
+                    label="可选值">
+                </el-table-column>
+                <el-table-column
+                    prop="select"
+                    label="默认值">
+                </el-table-column>
+            </el-table>
+        </div>
     </div>
 </template>
 
 <script>
+import { reactive, toRefs } from 'vue-demi';
 export default {
     name: 'HelloVue3Index',
+    setup() { 
+        const data = [
+            {
+                name: 'type',
+                remark: '类型',
+                type: 'string',
+                canSelect: 'primary / success / warning / danger / info / default	',
+                select: 'default',
+            },
+            {
+                name: 'href',
+                remark: '原生 href 属性',
+                type: 'string',
+                canSelect: '—',
+                select: '—',
+            },
+            {
+                name: 'round',
+                remark: '是否为圆角按钮',
+                type: 'boolean',
+                canSelect: '—',
+                select: 'false',
+            },
+        ]
+        const state = reactive({
+            data
+        })
+
+        return{
+            ...toRefs(state)
+        }
+    }
 };
 </script>
 
