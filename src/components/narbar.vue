@@ -25,33 +25,37 @@ export default {
                     path: '/link',
                     name: 'Link文字链接'
                 },
-                { 
-                    path: '/selectEnum',
-                    name: 'Select枚举值'
-                },
+                // { 
+                //     path: '/selectEnum',
+                //     name: 'Select枚举值'
+                // },
                 { 
                     path: '/open_tree',
-                    name: '递归展开树'
+                    name: '递归展开树Menu'
                 },
-                { 
-                    path: '/drag_form',
-                    name: '可拖拽Form表单'
-                },
+                // { 
+                //     path: '/drag_form',
+                //     name: '可拖拽Form表单'
+                // },
                 { 
                     path: '/drag_table',
                     name: '可拖拽Table表格'
                 },
                 { 
-                    path: '/select',
-                    name: 'Select选择框'
+                    path: '/filter_table',
+                    name: 'Table过滤列'
                 },
                 { 
-                    path: '/input',
-                    name: 'Input输入框'
+                    path: '/test_select',
+                    name: '枚举值Select下拉选择框'
+                },
+                { 
+                    path: '/test_vue2table',
+                    name: '测试vue2table'
                 },
                 { 
                     path: '/dialog',
-                    name: 'Dialog对话框'
+                    name: 'Dialog可拖拽对话框'
                 },
                 { 
                     path: '/tree',
@@ -129,6 +133,9 @@ export default {
 <style lang="scss" scoped>
 .narbar{ 
     height: 100%;
+}
+.box-li:last-child{ 
+    padding-bottom: 20px;
 }
 .box-li{
     margin-top: 30px;

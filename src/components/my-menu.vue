@@ -1,15 +1,19 @@
 <template>
-    <div class="menu">
-        <template v-for="item in routes">
+    <div class="menu" :style="`background-color:${backgroundColor};color:${textColor};`">
+        <template v-for="item in data">
           <sub-menu
             v-if="item.children && item.children.length > 1"
             :item="item"
             :base-path="item.path"
+            :background-color="backgroundColor"
+            :text-color="textColor"
             :key="item.path"
           />
           <menu-item
             v-else
             :path="item.path"
+            :background-color="backgroundColor"
+            :text-color="textColor"
             :title="item.meta.title"
             :key="item.path"
             />
@@ -22,6 +26,20 @@
     import menuItem from '@/components/menu-item'
     import { ref, reactive, toRefs, onMounted, provide } from 'vue';
     export default {
+        props: { 
+            data: {
+                type: Array,
+            },
+            textColor: {
+                type: String,
+                default: '#303133'
+            },
+            backgroundColor: {
+                type: String,
+                default: '#ffffff'
+            }
+        },
+        name: 'MyMenu',
         components: { 
             subMenu,
             menuItem
@@ -29,69 +47,6 @@
         setup(props, context) {
             const featureState = reactive({ 
                 value: '123',
-                routes: 
-                    [
-                        {
-                            path: '/',
-                            meta: {
-                            title: '八大菜系介绍'
-                            }
-                        },
-                        {
-                            path: '/luCai',
-                            meta: {
-                            title: '鲁菜'
-                            },
-                            children: [
-                            {
-                                path: 'history',
-                                meta: {
-                                title: '发展历史'
-                                },
-                                children: [
-                                {
-                                    path: 'qinAndHan',
-                                    meta: {
-                                    title: '秦汉时期'
-                                    }
-                                },
-                                {
-                                    path: 'northernWei',
-                                    meta: {
-                                    title: '北魏时期'
-                                    }
-                                }
-                                ]
-                            },
-                            {
-                                path: 'features',
-                                meta: {
-                                title: '风味特色'
-                                }
-                            }
-                            ]
-                        },
-                        {
-                            path: '/chuanCai',
-                            meta: {
-                            title: '川菜'
-                            },
-                            children: [
-                            {
-                                path: 'introduction',
-                                meta: {
-                                title: '川菜概论'
-                                }
-                            },
-                            {
-                                path: 'history',
-                                meta: {
-                                title: '发展历史'
-                                }
-                            }
-                            ]
-                        },
-                ],
                 openedSubMenus: [],
 
             });
@@ -126,8 +81,6 @@
     user-select: none;
     width: 200px;
     height: 100%;
-    background: white;
     overflow-x: hidden;
-    box-shadow: 15px 0 35px rgba(35, 0, 232, 0.1);
 }
 </style>

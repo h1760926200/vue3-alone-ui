@@ -63,16 +63,82 @@
                 </div>
             </div>
         </div>
+        <div style="margin-top:50px;;margin-bottom:100px">
+            <h1>Button 属性</h1>
+            <el-table
+                :data="data"
+                border
+                stripe
+                size="large"
+                style="width: 100%">
+                <el-table-column
+                    prop="name"
+                    label="属性">
+                </el-table-column>
+                <el-table-column
+                    prop="remark"
+                    label="说明">
+                </el-table-column>
+                <el-table-column
+                    prop="type"
+                    label="类型">
+                </el-table-column>
+                <el-table-column
+                    prop="canSelect"
+                    label="可选值">
+                </el-table-column>
+                <el-table-column
+                    prop="select"
+                    label="默认值">
+                </el-table-column>
+            </el-table>
+        </div>
     </div>
 </template>
 
 <script>
-// import myButton from '@/components/my-button'
+import { reactive, toRefs } from 'vue-demi';
 export default {
     name: 'HelloVue3Index',
-    // components: { 
-    //     myButton,
-    // }
+    setup() { 
+        const data = [ 
+            {
+                name: 'size',
+                remark: '尺寸',
+                type: 'string',
+                canSelect: 'large / default /small	',
+                select: '—',
+            },
+            {
+                name: 'type',
+                remark: '类型',
+                type: 'string',
+                canSelect: 'primary / success / warning / danger / info',
+                select: '—',
+            },
+            {
+                name: 'round',
+                remark: '是否为圆角按钮	',
+                type: 'boolean',
+                canSelect: '—',
+                select: 'false',
+            },
+            {
+                name: 'disabled',
+                remark: '按钮是否为禁用状态	',
+                type: 'boolean',
+                canSelect: '—',
+                select: 'false',
+            },
+        ]
+        const state = reactive({
+            data
+        })
+
+        return{ 
+            ...toRefs(state)
+        }
+    }
 };
 </script>
 

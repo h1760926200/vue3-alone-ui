@@ -6,7 +6,7 @@
 
 <script>
 export default {
-    name: 'HelloVue3MyForm',
+    name: 'MyForm',
 };
 </script>
 

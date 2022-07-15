@@ -11,9 +11,9 @@
         <slot></slot>
         <el-option
             v-for="item in options"
-            :key="item[type === 'enum' ? 'v' : kv.split(':')[1]]"
-            :label="getLabel(item)"
-            :value="getValue(item)"
+            :key="item['v']"
+            :label="item['k']"
+            :value="item['v']"
         >
             <template v-if="renderFormat">
                 <span v-html="renderFormat(item)"></span>
@@ -23,27 +23,27 @@
 </template>
 
 <script>
-import * as enumSource from '@/until/enum'
-import { reactive,toRefs,computed,onMounted } from 'vue'
+// import * as enumSource from '@/until/enum'
+import { reactive,toRefs,onMounted } from 'vue'
 // 拼音作为键
 const dataType = {}
 export default {
-    name: 'MySelect',
+    name: 'EnumSelect',
     props: { 
-        type: { 
-            type: String,
-            default: ''
-        },
         placeholder: { 
             type: String,
             default: '请选择'
         },
-        enumName: String,
         valueIsLabel: {
             type: Boolean,
             default: false
         },
         renderFormat: Function,
+        enum: { 
+            type: Object,
+            default: {},
+            required: true,
+        }
     },
     setup(props) { 
         const data = toRefs(props)
@@ -56,20 +56,12 @@ export default {
             get()
         })
 
-        const getLabel = (val) => { 
-            return val[data.type.value === 'enum' ? 'k' : state.kv.split(':')[0]]
-        }
-
-        const getValue = (val) => { 
-            if (data.valueIsLabel.value) return getLabel(val)
-            return val[data.type.value === 'enum' ? 'v' : state.kv.split(':')[1]]
-        }
-
         const get = () => { 
-            if(data.type.value === 'enum'){ 
-                return state.options = enumSource[data.enumName.value] ?  _getKV(enumSource[data.enumName.value]) : []
-            }
-            state.kv = kv || 'label:id'
+            state.options = _getKV(data.enum.value)
+            // if(data.type.value === 'enum'){ 
+                // state.options = enumSource[data.enumName.value] ?  _getKV(enumSource[data.enumName.value]) : []
+            // }
+            // state.kv = kv || 'label:id'
             // const [fn, msg, kv] = dataType[this.type]
         }
 
@@ -87,8 +79,6 @@ export default {
 
         return { 
             ...toRefs(state),
-            getLabel,
-            getValue
         }
     }
 };

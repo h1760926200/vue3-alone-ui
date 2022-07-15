@@ -34,7 +34,12 @@ export default {
 <style lang="scss" scoped>
 .header{ 
     // box-shadow: 15px 0 35px #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: #fff;
+    width: 100%;
+    text-align: center;
 }
 .span{
     color: #000000d9;
