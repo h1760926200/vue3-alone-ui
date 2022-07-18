@@ -25,6 +25,7 @@ import {
     ElDropdown,
     ElDropdownMenu,
     ElIcon,
+    ElPagination,
 } from 'element-plus';
 import 'element-plus/dist/index.css'
 createApp(App)
@@ -48,6 +49,7 @@ createApp(App)
 .use(ElIcon)
 .use(ElDropdown)
 .use(ElDropdownMenu)
+.use(ElPagination)
 .use(_public)
 .use(router) 
 .use(packages) 

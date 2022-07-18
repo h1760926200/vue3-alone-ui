@@ -11,6 +11,7 @@ import myTable from '@/components/my-table'
 import SelectTree from '@/components/select-tree'
 import MyFilterTable from '@/components/filter-table'
 import MyFilterColumn from '@/components/my-filter-column'
+import MyPagination from '@/components/my-pagination'
 
 export default {
     install (Vue) {
@@ -24,6 +25,7 @@ export default {
         Vue.component('enum-select', EnumSelect),
         Vue.component('my-table', myTable),
         Vue.component('select-tree', SelectTree),
-        Vue.component('my-filter-table', MyFilterTable)
+        Vue.component('my-filter-table', MyFilterTable),
+        Vue.component('my-pagination', MyPagination)
     }
 }

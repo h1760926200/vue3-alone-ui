@@ -58,7 +58,7 @@ export default {
         },
         backgroundColor: {
             type: String,
-            default: '#ffffff'
+            default: '#fafafa'
         }
     },
     setup(props) { 

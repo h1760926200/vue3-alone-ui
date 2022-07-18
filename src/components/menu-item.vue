@@ -22,7 +22,7 @@ export default {
         },
         backgroundColor: {
             type: String,
-            default: '#ffffff'
+            default: '#fafafa'
         }
     }
 };
