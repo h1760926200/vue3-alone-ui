@@ -59,6 +59,10 @@ const routes = [
                 path: '/test_vue2table',
                 component: () => import('@/views/vue2table/index.vue'),
             },
+            { 
+                path: '/pagination',
+                component: () => import('@/views/pagination/index.vue'),
+            },
         ]
     }
 ]

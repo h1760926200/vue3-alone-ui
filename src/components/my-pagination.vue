@@ -1,8 +1,8 @@
 <template>
     <div class="pagination" :style="`text-align: ${textAlign};`">
         <el-pagination
-            @size-change="val => $emit('updatePage', 'pageSize', val)"
-            @current-change="val => $emit('updatePage', 'page', val)"
+            @size-change="val => Page('pageSize', val)"
+            @current-change="val => Page('page', val)"
             :current-page="page"
             :page-sizes="pageSizeList"
             :page-size="pageSize"
@@ -13,12 +13,15 @@
 </template>
 
 <script>
+import { usePage } from '@/until/page'
+import { defineComponent, getCurrentInstance, reactive, toRefs } from 'vue';
+const [pageData, setPage] = usePage()
 export default {
     name: 'my-pagination',
     props: {
         total: {
             type: Number,
-            default: 0
+            default: 200
         },
         page: {
             type: Number,
@@ -39,21 +42,30 @@ export default {
         textAlign: {
             type: String,
             default: 'left'
+        },
+        getFunc: { 
+            type: Function,
         }
     },
-    data() {
-        return {
-            
-        };
-    },
+    setup() { 
+        const state = reactive({ 
 
-    mounted() {
-        
-    },
+        })
 
-    methods: {
-        
-    },
+        const { proxy } = getCurrentInstance()
+        const _this = proxy
+        const Page = (type,val) => {
+            setPage(type, val, _this, getList)
+        }
+
+        const getList = () =>  { 
+            console.log('这是从组件来的');
+        }
+        return{ 
+            ...toRefs(state),
+            Page
+        }
+    }
 };
 </script>
 

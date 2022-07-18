@@ -36,7 +36,7 @@
             },
             backgroundColor: {
                 type: String,
-                default: '#ffffff'
+                default: '#fafafa'
             }
         },
         name: 'MyMenu',

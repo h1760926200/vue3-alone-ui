@@ -2,7 +2,7 @@
     <div>
         <h1>封装递归展开树</h1>
         <div style="margin-bottom:20px">
-            <my-menu :data="list" background-color="" text-color=""></my-menu>
+            <my-menu :data="list"></my-menu>
         </div>
         <div class="footer">
             <!-- <div class="trotion">
